@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+## Nome: `Caroline Tavares`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para executar este projeto:
 
-## Available Scripts
+1. Entre pasta Projeto - MyHotWheels:
+```
+cd Projeto\ -\ MyHotWheels/
+```
 
-In the project directory, you can run:
+2. Rode npm install para instalar as dependências do projeto:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. E em seguida, npm start, para iniciar a execução do projeto.
 
-### `npm test`
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Introdução
+Ess projeto é uma aplicação web, desenvolvida com React, React Router e Boostrap, com objetivo de desenvolvimento de um CRUD (Create (criar), Read(ler), Update(atualizar) e Delete (deletar)). 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Este projeto está divido em 3 seções:
+1 - Home - Seção de boas-vindas;
+2 - Sobre - Seção com informações da aplicação web;
+3 - Carro - Seção onde é possível cadastrar, editar e excluir carros.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Componentes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Os componentes estão no diretório ./src/components e eles possuem as seguintes características:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### caminho: ./src/components/CarAdd
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- ModalCarAdd:
+Este componente é um modal utilizado para adicionar e editar informações sobre carros em uma lista de veículos. Este componente exibe um formulário com campos para o nome, marca, cor e ano de fabricação do carro.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Funcionalidades:
+Adicionar Carro: Quando nenhum carro está selecionado para edição, o modal é utilizado para adicionar um novo carro à lista. Um novo ID é gerado automaticamente, baseado no tamanho atual da lista, e o novo carro é salvo no armazenamento local (localStorage).
+Editar Carro: Se um carro existente for selecionado para edição, os campos do formulário são preenchidos com os dados atuais do carro, permitindo que o usuário faça as alterações necessárias. Ao salvar, os dados atualizados substituem as informações do carro existente na lista.
+Validação: Antes de salvar, o componente verifica se todos os campos foram preenchidos.
+Integração com LocalStorage: Os dados do carro são persistidos no localStorage, permitindo que a lista de carros seja mantida mesmo após o fechamento e reabertura da aplicação.
+Efeitos de Transição: Utiliza classes do Bootstrap para exibir um efeito de fade ao abrir e fechar o modal, proporcionando uma experiência de usuário suave e visualmente agradável.
 
-## Learn More
+### caminho: ./src/components/CarList
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+O componente CarList exibe uma tabela que lista todos os carros cadastrados. Ele é responsável por renderizar os dados dos carros, possibilitar a remoção de carros e abrir um modal para adicionar ou editar carros.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Funcionalidades:
+Listagem de Carros: Renderiza uma tabela que mostra a lista de carros cadastrados, com colunas para Nome, Marca, Cor e Ano de Fabricação.
+Remover Carro: Inclui um ícone de lixeira em cada linha da tabela. Ao clicar no ícone, o carro correspondente é removido da lista. A remoção é persistida no localStorage, garantindo que a lista seja atualizada e a remoção seja refletida mesmo após recarregar a página.
+Editar Carro: Inclui um ícone de lápis em cada linha da tabela. Ao clicar no ícone, o modal ModalCarAdd é aberto com os dados do carro selecionado, permitindo ao usuário editar as informações. O modal é preenchido com os dados atuais do carro, e as alterações são salvas no localStorage quando o usuário confirma a edição.
+Abertura do Modal: Um botão para adicionar novos carros abre o modal ModalCarAdd em um estado limpo, permitindo ao usuário adicionar um novo carro à lista.
+Persistência de Dados: Os dados dos carros são armazenados no localStorage e carregados na inicialização do componente. Isso garante que a lista de carros persista entre sessões do navegador.
+Estrutura da Tabela:
+Nome: Nome do carro.
+Marca: Marca do carro.
+Cor: Cor do carro.
+Ano: Ano de fabricação do carro.
+Ações: Botões para editar e remover o carro.
 
-### Code Splitting
+### caminho  ./src/components/NavBar
+O componente NavBar é uma barra de navegação que fornece links para diferentes seções da aplicação. 
+A navegação entre links se dá pela utilização do React Router Dom, que possibilita a transição entre as telas de Home, Sobre e Carros. 
+Funcionalidades:
+Links de Navegação: Inclui três links principais que permitem ao usuário navegar entre as diferentes seções da aplicação:
+Home: Redireciona para a página inicial (/).
+Sobre: Redireciona para a página de informações (/about).
+Carros: Redireciona para a página de listagem de carros (/cars).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

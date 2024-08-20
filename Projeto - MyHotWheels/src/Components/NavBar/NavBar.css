@@ -4,7 +4,7 @@
 }
 
 .link{
-color:#f3f7f3;
+color:#FAF9F6;
 text-decoration: none;
 font-family: "Poetsen One", sans-serif;
 
@@ -12,5 +12,9 @@ font-family: "Poetsen One", sans-serif;
 
 }
 .link:hover{
-    color:  #68afbb ;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #FAF9F6;
+    text-underline-offset: 4px;
+    
 }

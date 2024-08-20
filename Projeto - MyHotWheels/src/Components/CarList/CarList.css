@@ -1,0 +1,32 @@
+.content {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .modal-button-container {
+    position: absolute;
+    top: -80px;
+    left: 50;
+    margin-top: 60px;
+    margin-left: 300px;
+    
+    
+  }
+ 
+  .table-container {
+    margin: 0 auto;
+    width: 70%;
+  }
+  
+  .table {
+    width: 100%;
+  }
+
+  .btn-add{
+    background-color:  #116472;
+    color: #FAF9F6;
+}
+.btn-add:hover{
+    background-color: #FAF9F6;
+    color: #116472;
+}

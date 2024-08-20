@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
 
 import reportWebVitals from './reportWebVitals';
 
 import About from './Components/About/About.jsx'
-import CarForm from './Components/CarForm/CarForm.jsx';
+
 import App from './App.jsx'
 import Home from './Components/Home/Home.jsx';
 import CarList from './Components/CarList/CarList.jsx';
@@ -26,10 +26,7 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />
       },
-      {
-        path: "/add-car",
-        element: <CarForm />
-      },
+     
       {
         path: "/cars",
         element: <CarList />

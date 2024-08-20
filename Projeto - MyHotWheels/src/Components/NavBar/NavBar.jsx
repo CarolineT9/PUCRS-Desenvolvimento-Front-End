@@ -7,7 +7,6 @@ function NavBar() {
       <Link className='link' to='/'>Home</Link>
       <Link  className='link' to='/about'>Sobre</Link>
       <Link  className='link' to='/cars'>Carros</Link>
-      <Link  className='link' to='/add-car'>Adicionar Carros</Link>
     </nav>
   )
     
