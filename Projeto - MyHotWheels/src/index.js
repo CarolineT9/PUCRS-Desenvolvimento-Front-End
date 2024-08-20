@@ -4,10 +4,11 @@ import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 
-import About from './About/About.jsx'
-import CarForm from './CarForm.jsx/CarForm.jsx';
-import Home from './Home/Home.jsx';
-import CarList from './CarList/CarLis.jsx';
+import About from './Components/About/About.jsx'
+import CarForm from './Components/CarForm/CarForm.jsx';
+import App from './App.jsx'
+import Home from './Components/Home/Home.jsx';
+import CarList from './Components/CarList/CarList.jsx';
 
 import {
   createBrowserRouter, RouterProvider
@@ -15,26 +16,33 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/add-car",
+        element: <CarForm />
+      },
+      {
+        path: "/cars",
+        element: <CarList />
+      }
+    ]
   },
-  {
-    path: "/about",
-    element: <About/>
-  },
-  {
-    path: "/add-car",
-    element: <CarForm/>
-  },
-  {
-    path: "/carros",
-    element: <CarList/>
-  }
+
 
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

@@ -9,7 +9,8 @@ import {FaStar} from 'react-icons/fa'
   }
   return(
     
-    <>{
+    <>
+    {
       starList.map(
         (n) => <FaStar onClick={_=>evaluate(n)}
         color={n<=rate ? 'gold' : 'lightgray'}

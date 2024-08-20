@@ -1,0 +1,16 @@
+.bgnav{
+    background-color:   #116472 ;
+    height: 100px;
+}
+
+.link{
+color:#f3f7f3;
+text-decoration: none;
+font-family: "Poetsen One", sans-serif;
+
+ 
+
+}
+.link:hover{
+    color:  #68afbb ;
+}
